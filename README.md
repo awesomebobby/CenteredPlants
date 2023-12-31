@@ -1,5 +1,6 @@
 # Centered Plants
 A simple mod to disable offsets and center plants.
+
 **Warning:** Might be incompatible with other mods,  might not work well in server.
 ### OFF
 
