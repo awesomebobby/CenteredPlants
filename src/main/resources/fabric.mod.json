@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "centeredplants",
-  "version": "1.0",
+  "version": "2.0",
   "name": "CenteredPlants",
   "description": "A simple mod to disable offset and center plants.",
   "authors": ["awesomebobby"],
@@ -10,28 +10,31 @@
     "issues": "https://github.com/awesomebobby/CenteredPlants/issues"
   },
   "license": "MIT",
-  "icon": "assets/CenteredPlants/icon.png",
-  "environment": "client",
+  "icon": "assets/centeredplants/icon.png",
+  "environment": "*",
   "entrypoints": {
     "client": [
-      "bobby.centeredplants.CenteredPlantsClient"
+      "bobby.centeredplants.client.CenteredplantsClient"
     ],
     "main": [
-      "bobby.centeredplants.CenteredPlants"
+      "bobby.centeredplants.Centeredplants"
     ]
   },
   "mixins": [
-    "CenteredPlants.mixins.json"
+    "centeredplants.mixins.json",
+    {
+      "config": "centeredplants.client.mixins.json",
+      "environment": "client"
+    }
   ],
   "depends": {
-    "fabricloader": ">=0.14.22",
     "fabric": "*",
-    "minecraft": "1.20.1"
+    "minecraft": "$minecraft_version",
+    "fabric-api": "*"
   },
   "custom": {
     "modmenu": {
       "links": {
-        "soruce": "https://github.com/awesomebobby/CenteredPlants"
       },
       "update_checker": true
     }
