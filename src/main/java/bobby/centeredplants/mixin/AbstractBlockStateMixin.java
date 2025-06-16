@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class AbstractBlockStateMixin {
 
     @Inject(method = "getModelOffset", at = @At("HEAD"), cancellable = true)
-    public void setModdelOffset(BlockView world, BlockPos pos, CallbackInfoReturnable<Vec3d> cir){
+    public void getModelOffset(BlockPos pos, CallbackInfoReturnable<Vec3d> cir) {
         cir.setReturnValue(Vec3d.ZERO);
     }
 
